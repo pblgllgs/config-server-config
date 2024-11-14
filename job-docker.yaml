@@ -5,6 +5,9 @@ eureka:
         service-url:
             default-zone: http://service-registry:8761/eureka/
 management:
+    zipkin:
+        tracing:
+            endpoint: http://zipkin:9411/api/v2/spans
     tracing:
         sampling:
             probability: 1.0
@@ -32,3 +35,10 @@ spring:
                 dialect: org.hibernate.dialect.PostgreSQLDialect
                 format_sql: true
                 show_sql: true
+
+job-service:
+    url: http://job:8082
+company-service:
+    url: http://company:8081
+review-service:
+    url: http://review:8083
