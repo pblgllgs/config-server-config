@@ -25,7 +25,7 @@ spring:
         name: job
     datasource:
         password: password
-        url: jdbc:postgresql://postgres_job:5433/job_db
+        url: jdbc:postgresql://postgres:5432/job_db
         username: postgres
     jpa:
         hibernate:
