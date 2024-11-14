@@ -21,20 +21,20 @@ management:
 server:
     port: 8082
 spring:
-    application:
-        name: job
     datasource:
+        url: jdbc:mysql://mysql_job:3307/db_job
+        username: root
         password: password
-        url: jdbc:postgresql://postgres:5432/job_db
-        username: postgres
+        driver-class-name: com.mysql.cj.jdbc.Driver
     jpa:
+        database-platform: org.hibernate.dialect.MySQLDialect
         hibernate:
-            ddl-auto: create-drop
+        ddl-auto: update
         properties:
             hibernate:
-                dialect: org.hibernate.dialect.PostgreSQLDialect
-                format_sql: true
                 show_sql: true
+                format_sql: true
+        database: mysql
 
 job-service:
     url: http://job:8082
